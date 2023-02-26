@@ -11,8 +11,11 @@ function App() {
   const [messages, setMessages] = useState([]);
   const [search, setSearch] = useState("");
 
+  const url = "http://localhost:9292/";
+
   useEffect(() => {
-    fetch("http://localhost:4000/messages")
+    // fetch("http://localhost:4000/messages")
+    fetch(url + "messages")
       .then((r) => r.json())
       .then((messages) => setMessages(messages));
   }, []);

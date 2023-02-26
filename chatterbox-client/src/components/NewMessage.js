@@ -3,10 +3,14 @@ import React, { useState } from "react";
 function NewMessage({ currentUser, onAddMessage }) {
   const [body, setBody] = useState("");
 
+  const url = "http://localhost:9292/";
+
+
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("http://localhost:4000/messages", {
+    // fetch("http://localhost:4000/messages", {
+    fetch(url+"messages", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
